@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import { signOut, auth } from "../firebase";
 
-const Home = ({ navigation }) => {
+const Profile = ({ navigation }) => {
   const handleLogout = () => {
     signOut(auth)
       .then(() => {
@@ -24,7 +24,7 @@ const Home = ({ navigation }) => {
   );
 };
 
-export default Home;
+export default Profile;
 
 const styles = StyleSheet.create({
   home: {

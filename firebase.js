@@ -1,4 +1,3 @@
-// Import the functions you need from the SDKs you need
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -7,33 +6,42 @@ import {
   signOut,
 } from "firebase/auth";
 import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  doc,
+  setDoc,
+  addDoc,
+  Timestamp,
+} from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "",
   authDomain: "",
   projectId: "",
-  storageBucket: "",
+  storageBucket: "m",
   messagingSenderId: "",
   appId: "",
 };
 
 // Initialize Firebase
 let app = initializeApp(firebaseConfig);
-// if (firebase.apps.length === 0) {
-//   app = initializeApp(firebaseConfig);
-// } else {
-//   app = firebase.app();
-// }
 
 const auth = getAuth();
-
+const db = getFirestore(app);
 export {
   auth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
+  db,
+  collection,
+  getDocs,
+  doc,
+  setDoc,
+  addDoc,
+  Timestamp,
 };
